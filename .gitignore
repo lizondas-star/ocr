@@ -42,5 +42,5 @@ yarn-error.*
 __pycache__
 static
 venv/
-mobile/.expo
-mobile/node_modules/
+.expo
+node_modules/
