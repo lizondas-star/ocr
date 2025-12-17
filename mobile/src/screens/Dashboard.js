@@ -1,5 +1,5 @@
 import { View, Text, TouchableOpacity, StyleSheet, ScrollView } from "react-native";
-import Header from "../layout/Header";
+// import Header from "../layout/Header";
 
 export default function Dashboard({ onNavigate }) {
   const features = [

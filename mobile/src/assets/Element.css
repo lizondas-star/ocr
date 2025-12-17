@@ -1,11 +1,23 @@
-.element-container {
-  padding: 10px;
-  margin: 5px;
-  background-color: #f0f0f0;
-}
-
-.header-top-bar-ul {
+.ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
+}
+
+.header-top-bar-ul {
+  color: #fff;
+}
+
+.header-top-bar-ul-middle {
+  text-align: center;
+}
+
+.header-top-bar-ul-right {
+  text-align: right;
+}
+
+.header-top-bar-li {
+  display: inline-block;
+  margin-right: 8px;
+  font-size: 25px;
 }

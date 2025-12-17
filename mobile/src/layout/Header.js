@@ -1,17 +1,18 @@
 
+import { View } from "react-native-web";
 import { headerStyles } from "../styles/headerStyle";
 import { UIConfigProvider, useUIConfig } from "../context/UIConfigContext";
-import HeaderTop from "./Header-top";
-import '../assets/Element.css'
+import HeaderTop from "../components/header/Header-top";
 
 const componentMap = { HeaderTop };
 
 function HeaderContent() {
   const {data} = useUIConfig();
   const modules = data.module || [];
+  if(data.length === 0) return null;
   
   return (
-    <div className="header">
+    <View style={headerStyles.header}>
       {
         modules.map((module, index) => {
           if(!module.status) return null;
@@ -24,17 +25,7 @@ function HeaderContent() {
           );
         })
       }
-      {/* <HeaderTop /> */}
-      {/* {showBack ? (
-        <TouchableOpacity onPress={onBackPress}>
-          <Text style={styles.backButton}>←</Text>
-        </TouchableOpacity>
-      ) : (
-        <View style={styles.placeholder} />
-      )}
-      <Text style={styles.headerTitle}>{title}</Text>
-      <View style={styles.placeholder} /> */}
-    </div>
+    </View>
   );
 }
 

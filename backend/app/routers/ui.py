@@ -10,29 +10,47 @@ async def get_header_config():
                 'component': 'HeaderTop',
                 'element': [
                     {
-                        'status': True,
+                        'status': False,
                         'position': 'left',
                         'content': [
                             {
                                 'class': 'logo',
                                 'icon': '📷',
-                                'text': 'MyApp',
-                                'img': '',
-                                "order": ["icon", "img", "text"]
-                            }
+                                # 'text': 'MyApp',
+                                # 'img': '',
+                                # "order": ["icon", "img", "text"]
+                            },
+                            {
+                                'icon': '📄',
+                            },
+                            {
+                                'icon': '🔍',
+                            },
+                            {
+                                'icon': '⚙️',
+                            },
                         ],
                     },
                     {
-                        'status': True,
+                        'status': False,
                         'position': 'middle',
                         'content': [
                             {
                                 'class': 'logo',
                                 'icon': '📷',
-                                'text': 'MyApp',
-                                'img': '',
-                                "order": ["icon", "img", "text"]
-                            }
+                                # 'text': 'MyApp',
+                                # 'img': '',
+                                # "order": ["icon", "img", "text"]
+                            },
+                            {
+                                'icon': '📄',
+                            },
+                            {
+                                'icon': '🔍',
+                            },
+                            {
+                                'icon': '⚙️',
+                            },
                         ],
                     },
                     {
@@ -42,24 +60,19 @@ async def get_header_config():
                             {
                                 'class': 'logo',
                                 'icon': '📷',
-                                'text': 'MyApp',
-                                'img': '',
-                                "order": ["icon", "img", "text"]
+                                # 'text': 'MyApp',
+                                # 'img': '',
+                                # "order": ["icon", "img", "text"]
                             },
                             {
-                                'class': 'logo',
-                                'icon': '📷',
-                                'text': 'MyApp',
-                                'img': '',
-                                "order": ["icon", "img", "text"]
+                                'icon': '📄',
                             },
                             {
-                                'class': 'logo',
-                                'icon': '📷',
-                                'text': 'MyApp',
-                                'img': '',
-                                "order": ["icon", "img", "text"]
-                            }
+                                'icon': '🔍',
+                            },
+                            {
+                                'icon': '⚙️',
+                            },
                         ],
                     }
                 ]

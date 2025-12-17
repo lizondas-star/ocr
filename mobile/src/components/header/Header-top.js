@@ -1,19 +1,18 @@
 import { View } from "react-native-web";
-import { useUIConfig } from "../context/UIConfigContext"
-import { useState } from "react";
+import { useUIConfig } from "../../context/UIConfigContext"
+import { headerStyles } from "../../styles/headerStyle";
 import Element from "./Element";
-import { headerStyles } from "../styles/headerStyle";
 
 const HeaderTop = () => {
-    const {data} = useUIConfig();
-    const headerTopData = data?.module?.filter(module => module.component === 'HeaderTop') || [];
-    const elements = headerTopData[0].element; 
+    const {headerTopData} = useUIConfig();
+    const elements = headerTopData();
     
     return (
         <View style={headerStyles.headerTopBar}>
             {
-                elements?.map((element, index) => {
+                elements?.map((element, index) => {                    
                     if(!element.status) return null;
+                    
                     return (
                         <Element key={index} element={element} />
                     )
