@@ -28,32 +28,32 @@ export default function App() {
 
 const styles = StyleSheet.create({
 
-  content: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    padding: 20,
-  },
-  title: {
-    fontSize: 32,
-    fontWeight: "bold",
-    color: "#fff",
-    marginBottom: 10,
-  },
-  subtitle: {
-    fontSize: 18,
-    color: "#aaa",
-    marginBottom: 40,
-  },
-  button: {
-    backgroundColor: "#1E88E5",
-    paddingVertical: 15,
-    paddingHorizontal: 30,
-    borderRadius: 10,
-  },
-  buttonText: {
-    color: "#fff",
-    fontSize: 18,
-    fontWeight: "bold",
-  },
+  // content: {
+  //   flex: 1,
+  //   justifyContent: "center",
+  //   alignItems: "center",
+  //   padding: 20,
+  // },
+  // title: {
+  //   fontSize: 32,
+  //   fontWeight: "bold",
+  //   color: "#fff",
+  //   marginBottom: 10,
+  // },
+  // subtitle: {
+  //   fontSize: 18,
+  //   color: "#aaa",
+  //   marginBottom: 40,
+  // },
+  // button: {
+  //   backgroundColor: "#1E88E5",
+  //   paddingVertical: 15,
+  //   paddingHorizontal: 30,
+  //   borderRadius: 10,
+  // },
+  // buttonText: {
+  //   color: "#fff",
+  //   fontSize: 18,
+  //   fontWeight: "bold",
+  // },
 });

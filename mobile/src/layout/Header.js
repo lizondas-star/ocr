@@ -1,27 +1,30 @@
-import { View } from "react-native";
-import { headerStyles } from "../styles/header";
-import { useEffect, useState } from "react";
-import { apiGet } from "../api/client";
 
-export default function Header() {
-  const [response, setResponse] = useState([]);
-  useEffect(() => {    
-    fetchData();
-  }, []);
-  
-  const fetchData = async () => {
-    try {
-      const res = await apiGet('ui/header');
-      setResponse(res);
-    } catch (error) {
-      console.error('Error:', error);
-    }
-  };
+import { headerStyles } from "../styles/headerStyle";
+import { UIConfigProvider, useUIConfig } from "../context/UIConfigContext";
+import HeaderTop from "./Header-top";
+import '../assets/Element.css'
 
-  console.log(response);
+const componentMap = { HeaderTop };
+
+function HeaderContent() {
+  const {data} = useUIConfig();
+  const modules = data.module || [];
   
   return (
-    <View style={headerStyles.header}>
+    <div className="header">
+      {
+        modules.map((module, index) => {
+          if(!module.status) return null;
+          const Component = componentMap[module.component];
+          
+          if (!Component) return null;
+          
+          return (
+            <Component key={index} />
+          );
+        })
+      }
+      {/* <HeaderTop /> */}
       {/* {showBack ? (
         <TouchableOpacity onPress={onBackPress}>
           <Text style={styles.backButton}>←</Text>
@@ -31,6 +34,14 @@ export default function Header() {
       )}
       <Text style={styles.headerTitle}>{title}</Text>
       <View style={styles.placeholder} /> */}
-    </View>
+    </div>
+  );
+}
+
+export default function Header() {
+  return (
+    <UIConfigProvider>
+      <HeaderContent />
+    </UIConfigProvider>
   );
 }

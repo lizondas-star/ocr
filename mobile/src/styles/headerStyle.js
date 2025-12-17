@@ -2,6 +2,7 @@ import { StyleSheet } from "react-native";
 
 export const headerStyles = StyleSheet.create({
   header: {
+    display: 'block',
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
@@ -10,4 +11,17 @@ export const headerStyles = StyleSheet.create({
     paddingVertical: 15,
     paddingTop: 15,
   },
+
+  headerTopBar: {
+    flexDirection: 'row'
+  },
+  headerTopBarItem: {
+    display: 'block',
+    flex: '1'
+  },
+
+  headerTopBarItemUl: {
+    listStyleType: 'none',
+  }
+
 })
