@@ -1,4 +1,4 @@
-import { View } from "react-native-web";
+import { View } from "react-native";
 import { useUIConfig } from "../../context/UIConfigContext"
 import { headerStyles } from "../../styles/headerStyle";
 import Element from "./Element";
@@ -12,7 +12,7 @@ const HeaderTop = () => {
             {
                 elements?.map((element, index) => {                    
                     if(!element.status) return null;
-                    
+
                     return (
                         <Element key={index} element={element} />
                     )

@@ -1,32 +1,29 @@
-import { View } from 'react-native-web'
+import { View, Text, Image } from 'react-native'
 import { headerStyles } from '../../styles/headerStyle'
-import '../../assets/element.css'
+import { globalStyles } from '../../styles/globalStyles';
 
 const Element = ({element}) => {
-  // console.log(element);
   const content = element?.content || '';
+  
+  const positionClass = element?.position && headerStyles[`headerTopBarColunm_${element.position}`] || '';
     
   return (
-    <View style={headerStyles.headerTopBarItem}>
-      <ul className={`ul header-top-bar-ul header-top-bar-ul-${element?.position}`}>
-        {
-            content?.map((item, index) => {
-              console.log(item);
-              
-                const order = item.order || ['icon', 'img', 'text'];
-                return(
-                    <li key={index} className={`li header-top-bar-li ${item.class && 'header-top-bar-li-'+ item.class || ''}`}>
-                        {order.map((field, i) => {
-                            if (field === 'icon') return item.icon && <span key={i}>{item.icon}</span>;
-                            if (field === 'text') return item.text && <span key={i}>{item.text}</span>;
-                            if (field === 'img' && item.img) return item.img && <img key={i} src={item.img} alt={item.text} />;
-                            return null;
-                        })}
-                    </li>
-                )
-            })
-        }
-      </ul>
+    <View style={[headerStyles.headerTopBarColunm, positionClass]}>
+      {
+        content?.map((item, index) => {
+            const order = item.order || ['icon', 'img', 'text'];
+            return(
+              <View key={index}>
+                {order.map((field, i) => {
+                    if (field === 'icon') return item.icon && <Text key={i} style={[headerStyles.icon]}>{item.icon}</Text>;
+                    if (field === 'text') return item.text && <Text key={i} style={globalStyles.Color.white}>{item.text}</Text>;
+                    if (field === 'img' && item.img) return <Image key={i} source={{uri: item.img}} style={{width: 20, height: 20}} />;
+                    return null;
+                })}
+              </View>
+          )
+        })
+      }
     </View>
   )
 }

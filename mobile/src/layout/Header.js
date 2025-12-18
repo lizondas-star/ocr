@@ -1,5 +1,5 @@
 
-import { View } from "react-native-web";
+import { View } from "react-native";
 import { headerStyles } from "../styles/headerStyle";
 import { UIConfigProvider, useUIConfig } from "../context/UIConfigContext";
 import HeaderTop from "../components/header/Header-top";

@@ -14,7 +14,7 @@ async def get_header_config():
                         'position': 'left',
                         'content': [
                             {
-                                'class': 'logo',
+                                # 'class': 'logo',
                                 'icon': '📷',
                                 # 'text': 'MyApp',
                                 # 'img': '',
@@ -32,11 +32,11 @@ async def get_header_config():
                         ],
                     },
                     {
-                        'status': False,
+                        'status': True,
                         'position': 'middle',
                         'content': [
                             {
-                                'class': 'logo',
+                                # 'class': 'logo',
                                 'icon': '📷',
                                 # 'text': 'MyApp',
                                 # 'img': '',
@@ -58,7 +58,7 @@ async def get_header_config():
                         'position': 'right',
                         'content': [
                             {
-                                'class': 'logo',
+                                # 'class': 'logo',
                                 'icon': '📷',
                                 # 'text': 'MyApp',
                                 # 'img': '',
