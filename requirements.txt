@@ -1,2 +1,4 @@
 fastapi
 uvicorn
+
+source venv/Scripts/activate
