@@ -12,9 +12,9 @@ export default function Dashboard({ onNavigate }) {
   return (
     <View style={styles.container}>
       {/* <Header title="Dashboard" showBack={false} /> */}
-      <ScrollView style={styles.content}>
+      {/* <ScrollView style={styles.content}> */}
         <Text style={styles.welcome}>Welcome to OCR App</Text>
-        <View style={styles.grid}>
+        {/* <View style={styles.grid}>
           {features.map((feature) => (
             <TouchableOpacity 
               key={feature.id} 
@@ -26,8 +26,8 @@ export default function Dashboard({ onNavigate }) {
               <Text style={styles.cardSubtitle}>{feature.subtitle}</Text>
             </TouchableOpacity>
           ))}
-        </View>
-      </ScrollView>
+        </View> */}
+      {/* </ScrollView> */}
     </View>
   );
 }
