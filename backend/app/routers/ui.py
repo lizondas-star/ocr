@@ -9,23 +9,26 @@ async def get_dashboard_config():
         'columns': 2,
         'cards': [
             {
-                'id': 1,
-                'title': 'Scan Text',
+                'name': 'Dashboard',
+                'component': 'Dashboard',
+                'title': 'Dashboard',
                 'subtitle': 'Extract text from images',
                 'icon': '📄',
                 'color': '#1E88E5',
                 'route': '/scan-text'
             },
             {
-                'id': 2,
-                'title': 'Document Scanner',
+                'name': 'Scan',
+                'component': 'Scan',
+                'title': 'Scanner',
                 'subtitle': 'Scan documents',
                 'icon': '📋',
                 'color': '#43A047',
                 'route': '/doc-scanner'
             },
             {
-                'id': 3,
+                'name': 'History',
+                'component': 'History',
                 'title': 'History',
                 'subtitle': 'View past scans',
                 'icon': '📚',
@@ -33,7 +36,8 @@ async def get_dashboard_config():
                 'route': '/history'
             },
             {
-                'id': 4,
+                'name': 'Settings',
+                'component': 'Settings',
                 'title': 'Settings',
                 'subtitle': 'App preferences',
                 'icon': '⚙️',
