@@ -14,35 +14,30 @@ async def get_dashboard_config():
                 'title': 'Dashboard',
                 'subtitle': 'Extract text from images',
                 'icon': '📄',
-                'color': '#1E88E5',
-                'route': '/scan-text'
             },
             {
                 'name': 'Scan',
                 'component': 'Scan',
                 'title': 'Scanner',
                 'subtitle': 'Scan documents',
-                'icon': '📋',
-                'color': '#43A047',
-                'route': '/doc-scanner'
+                # 'icon': '📋',
+                'MaterialIcons': 'document-scanner',
             },
             {
                 'name': 'History',
                 'component': 'History',
                 'title': 'History',
                 'subtitle': 'View past scans',
-                'icon': '📚',
-                'color': '#FB8C00',
-                'route': '/history'
+                # 'icon': '📚',
+                'MaterialIcons': 'history',
             },
             {
                 'name': 'Settings',
                 'component': 'Settings',
                 'title': 'Settings',
                 'subtitle': 'App preferences',
-                'icon': '⚙️',
-                'color': '#8E24AA',
-                'route': '/settings'
+                # 'icon': '⚙️',
+                'MaterialIcons': 'settings',
             }
         ]
     }
@@ -78,7 +73,7 @@ async def get_header_config():
                         ],
                     },
                     {
-                        'status': True,
+                        'status': False,
                         'position': 'middle',
                         'content': [
                             {

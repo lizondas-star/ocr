@@ -7,14 +7,17 @@ import HeaderTop from "../components/header/Header-top";
 const componentMap = { HeaderTop };
 
 function HeaderContent() {
-  const {data} = useUIConfig();
+  const {data, loading} = useUIConfig();
   const modules = data.module || [];
   if(data.length === 0) return null;
   
   return (
     <View style={headerStyles.header}>
       {
-        modules.map((module, index) => {
+        loading && <View style={headerStyles.headerSkeleton}></View>
+      }
+      {
+        !loading && modules.map((module, index) => {
           if(!module.status) return null;
           const Component = componentMap[module.component];
           

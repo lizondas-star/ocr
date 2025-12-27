@@ -41,6 +41,12 @@ export const headerStyles = StyleSheet.create({
 
   icon: {
     fontSize: 25
-  }
+  },
+
+  headerSkeleton: {
+    height: 50,
+    backgroundColor: "#222",
+    opacity: 0.4,
+  },
 
 })

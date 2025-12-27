@@ -7,16 +7,20 @@ const UIHeaderContext = createContext(null);
 
 export function UIHeaderProvider({ children }) {
     const [data, setData] = useState([]);
+    const [loading, setLoading] = useState(true);
     useEffect(() => {
         fetchData();
     }, [])
     
     const fetchData = async () => {
         try {
+            setLoading(true);
             const response = await apiGet('ui/header');
             setData(response);
         } catch (error) {
             console.error('Error:', error);
+        } finally {
+            setLoading(false);
         }
     }
 
@@ -29,7 +33,8 @@ export function UIHeaderProvider({ children }) {
     return(
         <UIHeaderContext.Provider value={{
             data, 
-            headerTopData
+            headerTopData,
+            loading
             }}>
             {children}
         </UIHeaderContext.Provider>

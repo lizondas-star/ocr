@@ -2,4 +2,5 @@ fastapi
 uvicorn
 
 source venv/Scripts/activate
+cd backend/app/
 uvicorn main:app --reload

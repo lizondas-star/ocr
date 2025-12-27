@@ -1,14 +1,15 @@
 import { View } from "react-native";
 import { globalStyles } from "./src/styles/globalStyles";
-import Header from "./src/layout/Header";
 import Body from "./src/layout/Body";
+import { NavigationContainer } from "@react-navigation/native";
 
 export default function App() {
 
   return (
     <View style={globalStyles.container}>
-      <Header/>
-      <Body />
+      <NavigationContainer>
+        <Body />
+      </NavigationContainer>
     </View>
   );
 }

@@ -17,7 +17,6 @@ export function UIDashboardProvider({ children }) {
             console.error('Error:', error);
         }
     }
-    console.log(data);
     
     return(
         <UIDashboardContext.Provider value={{
