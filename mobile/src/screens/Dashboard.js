@@ -1,76 +1,36 @@
-import { View, Text, TouchableOpacity, StyleSheet, ScrollView } from "react-native";
-// import Header from "../layout/Header";
-
-export default function Dashboard({ onNavigate }) {
-  const features = [
-    { id: 1, title: "Scan Text", subtitle: "Extract text from images", icon: "📄" },
-    { id: 2, title: "Document Scanner", subtitle: "Scan documents", icon: "📋" },
-    { id: 3, title: "History", subtitle: "View past scans", icon: "📚" },
-    { id: 4, title: "Settings", subtitle: "App preferences", icon: "⚙️" },
-  ];
-
+import { View, Text, StyleSheet, Button, TouchableOpacity } from "react-native";
+import { useNavigation } from '@react-navigation/native';
+import { globalStyles } from "../styles/globalStyles";
+import { dashboardStyle } from "../styles/dashboardStyle";
+import { MaterialIcons } from "@expo/vector-icons";
+export default function Dashboard() {
+  const navigation = useNavigation();
   return (
-    <View style={styles.container}>
-      {/* <Header title="Dashboard" showBack={false} /> */}
-      {/* <ScrollView style={styles.content}> */}
-        <Text style={styles.welcome}>Welcome to OCR App</Text>
-        {/* <View style={styles.grid}>
-          {features.map((feature) => (
-            <TouchableOpacity 
-              key={feature.id} 
-              style={styles.card}
-              onPress={() => onNavigate && onNavigate(feature.title)}
-            >
-              <Text style={styles.icon}>{feature.icon}</Text>
-              <Text style={styles.cardTitle}>{feature.title}</Text>
-              <Text style={styles.cardSubtitle}>{feature.subtitle}</Text>
+    <View style={globalStyles.container}>
+        <View style={globalStyles.content}>
+          <Text style={dashboardStyle.welcome}> Dashboard </Text>
+          <View style={dashboardStyle.grid}>
+            <TouchableOpacity style={dashboardStyle.card} title="Scan Image" onPress={() => navigation.navigate("Scan")} >
+              <MaterialIcons name="document-scanner" style={dashboardStyle.icon} />
+              <Text style={dashboardStyle.cardTitle}>Scan Image</Text>
             </TouchableOpacity>
-          ))}
-        </View> */}
-      {/* </ScrollView> */}
+
+            <TouchableOpacity style={dashboardStyle.card} title="History" onPress={() => navigation.navigate("History")} >
+              <MaterialIcons name="history" style={dashboardStyle.icon} />
+              <Text style={dashboardStyle.cardTitle}>Scan Image</Text>            
+            </TouchableOpacity>
+
+            <TouchableOpacity style={dashboardStyle.card} title="Settings" onPress={() => navigation.navigate("Settings")} >
+              <MaterialIcons style={dashboardStyle.icon} name="settings"/>
+              <Text style={dashboardStyle.cardTitle}>Settings</Text>
+            </TouchableOpacity>
+          </View>
+        </View>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#121212",
-  },
-  content: {
-    flex: 1,
-    padding: 20,
-  },
-  welcome: {
-    fontSize: 24,
-    fontWeight: "bold",
-    color: "#fff",
-    marginBottom: 30,
-    textAlign: "center",
-  },
-  grid: {
-    flexDirection: "row",
-    flexWrap: "wrap",
-    justifyContent: "space-between",
-  },
-  card: {
-    width: "48%",
-    backgroundColor: "#1E1E1E",
-    padding: 20,
-    borderRadius: 12,
-    marginBottom: 15,
-    alignItems: "center",
-  },
-  icon: {
-    fontSize: 40,
-    marginBottom: 10,
-  },
-  cardTitle: {
-    fontSize: 16,
-    fontWeight: "bold",
-    color: "#fff",
-    marginBottom: 5,
-  },
   cardSubtitle: {
     fontSize: 12,
     color: "#aaa",

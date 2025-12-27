@@ -1,5 +1,5 @@
 import { View } from "react-native";
-import { useUIConfig } from "../../context/UIConfigContext"
+import { useUIConfig } from "../../context/UIHeaderContext"
 import { headerStyles } from "../../styles/headerStyle";
 import Element from "./Element";
 

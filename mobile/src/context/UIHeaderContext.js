@@ -3,9 +3,9 @@ import { createContext, useContext } from 'react';
 import { useEffect, useState } from 'react';
 import { apiGet } from "../api/client";
 
-const UIConfigContext = createContext(null);
+const UIHeaderContext = createContext(null);
 
-export function UIConfigProvider({ children }) {
+export function UIHeaderProvider({ children }) {
     const [data, setData] = useState([]);
     useEffect(() => {
         fetchData();
@@ -27,16 +27,16 @@ export function UIConfigProvider({ children }) {
     }
     
     return(
-        <UIConfigContext.Provider value={{
+        <UIHeaderContext.Provider value={{
             data, 
             headerTopData
             }}>
             {children}
-        </UIConfigContext.Provider>
+        </UIHeaderContext.Provider>
     );
 }
 
 export function useUIConfig() {
-    return useContext(UIConfigContext);
+    return useContext(UIHeaderContext);
 }
 

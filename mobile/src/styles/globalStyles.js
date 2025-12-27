@@ -9,5 +9,9 @@ export const globalStyles = StyleSheet.create({
     white: {
       color: '#ffffff'
     }
-  }
+  },
+  content: {
+    flex: 1,
+    padding: 20,
+  },
 })

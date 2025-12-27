@@ -1,7 +1,7 @@
 
 import { View } from "react-native";
 import { headerStyles } from "../styles/headerStyle";
-import { UIConfigProvider, useUIConfig } from "../context/UIConfigContext";
+import { UIHeaderProvider, useUIConfig } from "../context/UIHeaderContext";
 import HeaderTop from "../components/header/Header-top";
 
 const componentMap = { HeaderTop };
@@ -31,8 +31,8 @@ function HeaderContent() {
 
 export default function Header() {
   return (
-    <UIConfigProvider>
+    <UIHeaderProvider>
       <HeaderContent />
-    </UIConfigProvider>
+    </UIHeaderProvider>
   );
 }
