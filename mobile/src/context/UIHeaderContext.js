@@ -1,11 +1,10 @@
-// import { fetchUIConfig } from "../api/uiConfig.api";
 import { createContext, useContext } from 'react';
 import { useEffect, useState } from 'react';
 import { apiGet } from "../api/client";
 
 const UIHeaderContext = createContext(null);
 
-export function UIHeaderProvider({ children }) {
+export function UIHeaderProvider({ children, screen }) {    
     const [data, setData] = useState([]);
     const [loading, setLoading] = useState(true);
     useEffect(() => {
@@ -22,26 +21,20 @@ export function UIHeaderProvider({ children }) {
         } finally {
             setLoading(false);
         }
-    }
-
-    const headerTopData = () => {
-        const headerTop = data?.module?.filter(module => module.component === 'HeaderTop') || [];
-        const elements = headerTop[0].element; 
-        return elements;
-    }
+    }   
      
     return(
         <UIHeaderContext.Provider value={{
             data, 
-            headerTopData,
-            loading
+            loading,
+            screen
             }}>
             {children}
         </UIHeaderContext.Provider>
     );
 }
 
-export function useUIConfig() {
+export function useUIHeaderConfig() {
     return useContext(UIHeaderContext);
 }
 

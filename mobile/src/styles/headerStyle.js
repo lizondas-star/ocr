@@ -11,6 +11,9 @@ export const headerStyles = StyleSheet.create({
     paddingVertical: 15,
     paddingTop: 35
   },
+  headerBack: {
+    justifyContent: "flex-start",
+  },
 
   items: {
     flexDirection: "row",
@@ -25,9 +28,15 @@ export const headerStyles = StyleSheet.create({
   },
 
   headerSkeleton: {
-    height: 50,
+    height: 20,
     backgroundColor: "#222",
     opacity: 0.4,
+  },
+
+  itemBack: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
   },
 
 })
