@@ -4,7 +4,7 @@ export const headerStyles = StyleSheet.create({
   header: {
     width: '100%',
     flexDirection: "row",
-    justifyContent: "space-between",
+    justifyContent: "flex-end",
     alignItems: "center",
     backgroundColor: "rgb(54 28 28)",
     paddingHorizontal: 20,
@@ -12,31 +12,12 @@ export const headerStyles = StyleSheet.create({
     paddingTop: 35
   },
 
-  headerTopBar: {
-    width:'100%',
+  items: {
     flexDirection: "row",
   },
 
-  headerTopBarColunm: {
-    flex: 1,
-    color: '#fff',
-    flexDirection: 'row'
-  },
-
-  headerTopBarColunm_middle: {
-    justifyContent: 'center',
-  },
-
-  headerTopBarColunm_right: {
-    justifyContent: 'flex-end',
-  },
-
-  headerTopLogo: {
-    width: 100,
-  },
-
-  logo: {
-    fontSize: 30
+  item: {
+    marginLeft: 10
   },
 
   icon: {

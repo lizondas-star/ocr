@@ -1,13 +1,13 @@
-import { UIDashboardProvider } from "../context/UIDashboardContext";
+import { ComponentProvider } from "../context/componentContext";
 import AppNavigator from "../navigation/AppNavigator";
 
 
 
 export default function Body() {
   return (
-    <UIDashboardProvider>
+    <ComponentProvider>
       <AppNavigator />
-    </UIDashboardProvider>
+    </ComponentProvider>
   )
 }
 

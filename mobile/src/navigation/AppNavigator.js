@@ -3,14 +3,13 @@ import Dashboard from "../screens/Dashboard";
 import Scan from "../screens/Scan";
 import History from "../screens/History";
 import Settings from "../screens/Settings";
-import { useUIDashboard } from "../context/UIDashboardContext";
 import { Text } from 'react-native';
 import Header from '../layout/Header';
+import { useComponent } from '../context/componentContext';
 
 export default function AppNavigator() {
     const Stack = createNativeStackNavigator();
-    const {cards} = useUIDashboard();
-    
+    const {data} = useComponent();    
     const componentMap = {
         Dashboard,
         Scan,
@@ -18,27 +17,30 @@ export default function AppNavigator() {
         Settings
     };
     
-    if(!cards) return<Text>Loading...</Text>;;
-    return(
-        <Stack.Navigator initialRouteName="Dashboard" >
+    if(data.length === 0) return<Text>Loading...</Text>;
+    
+    const screens = Object.values(data);
+    const firstScreenName = screens[0]?.name;
+
+    return( 
+        <Stack.Navigator initialRouteName={firstScreenName} >
             {
-            cards.map((card, index) => {
-                const Component = componentMap[card.component];
-                if (!Component) return null;
-                
-                return (
-                <Stack.Screen 
-                    name={card.name} 
-                    key={index} 
-                    component={Component}
-                    options={{
-                        headerShown: true,
-                        header: () => <Header />
-                    }} 
-                />
-                )
-            })
-            }
+                screens.map((screen, index) => {                    
+                    const Component = componentMap[screen.component];
+                    
+                    return (
+                        <Stack.Screen 
+                            name={screen.name} 
+                            key={index} 
+                            component={Component}
+                            options={{
+                                headerShown: true,
+                                header: () => <Header />
+                            }} 
+                        />
+                    )
+                })
+            } 
         </Stack.Navigator>
     )
 }

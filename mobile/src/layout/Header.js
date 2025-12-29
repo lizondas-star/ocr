@@ -1,41 +1,32 @@
 
 import { View } from "react-native";
 import { headerStyles } from "../styles/headerStyle";
-import { UIHeaderProvider, useUIConfig } from "../context/UIHeaderContext";
-import HeaderTop from "../components/header/Header-top";
+import { useEffect, useState } from "react";
+import { apiGet } from "../api/client";
+import Element from "../components/header/Element";
 
-const componentMap = { HeaderTop };
 
-function HeaderContent() {
-  const {data, loading} = useUIConfig();
-  const modules = data.module || [];
+export default function Header() {
+  const [data, setData] = useState([])
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const fetchData = async () => {
+    try {
+      const response = await apiGet('ui/header');
+      setData(response);
+    } catch (error) {
+      console.error('Error:', error);
+    }
+  };
+  
   if(data.length === 0) return null;
   
   return (
     <View style={headerStyles.header}>
-      {
-        loading && <View style={headerStyles.headerSkeleton}></View>
-      }
-      {
-        !loading && modules.map((module, index) => {
-          if(!module.status) return null;
-          const Component = componentMap[module.component];
-          
-          if (!Component) return null;
-          
-          return (
-            <Component key={index} />
-          );
-        })
-      }
+        <Element element={data} /> 
     </View>
-  );
-}
-
-export default function Header() {
-  return (
-    <UIHeaderProvider>
-      <HeaderContent />
-    </UIHeaderProvider>
   );
 }

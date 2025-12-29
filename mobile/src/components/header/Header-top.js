@@ -11,6 +11,8 @@ const HeaderTop = () => {
     const elements = headerTopData();
     const navigation = useNavigation();
     const canGoBack = navigation.canGoBack();
+    console.log(elements);
+    
     
     return (
         <View style={headerStyles.headerTopBar}>
