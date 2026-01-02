@@ -1,6 +1,7 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Dashboard from "../screens/Dashboard";
 import Scan from "../screens/Scan";
+import CropImage from "../screens/CropImage";
 import History from "../screens/History";
 import Settings from "../screens/Settings";
 import { Text } from 'react-native';
@@ -14,6 +15,7 @@ export default function AppNavigator() {
     const componentMap = {
         Dashboard,
         Scan,
+        CropImage,
         History,
         Settings
     };

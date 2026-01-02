@@ -35,6 +35,14 @@ async def get_component_config(component = ''):
             'subtitle': 'App preferences',
             # 'icon': '⚙️',
             'MaterialIcons': 'settings',
+        },
+        'CropImage': {
+            'name': 'CropImage',
+            'component': 'CropImage',
+            'title': 'Crop Image',
+            'subtitle': 'App preferences',
+            # 'icon': '⚙️',
+            'MaterialIcons': 'settings',
         }
     }
 
