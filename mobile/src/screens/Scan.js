@@ -9,7 +9,7 @@ export default function Scan() {
 
   const pickFromGallery = async () => {    
     const permission = await ImagePicker.requestMediaLibraryPermissionsAsync();
-
+    
     if (!permission.granted) {
       Alert.alert("Permission required", "Gallery access is needed");
       return;
@@ -35,7 +35,7 @@ export default function Scan() {
             >
               <MaterialIcons name="camera" style={dashboardStyle.icon} />
               <Text style={dashboardStyle.cardTitle}>Use Camera</Text>
-              <Text style={[globalStyles.Color.white, globalStyles.center]}>Scan using device camera</Text>
+              <Text style={[globalStyles.Color.white, globalStyles.textCenter]}>Scan using device camera</Text>
             </TouchableOpacity>
 
             <TouchableOpacity  style={dashboardStyle.card}
@@ -43,7 +43,7 @@ export default function Scan() {
             >
               <MaterialIcons name="browse-gallery" style={dashboardStyle.icon} />
               <Text style={dashboardStyle.cardTitle}>From Gallery</Text>
-              <Text style={[globalStyles.Color.white, globalStyles.center]}>Select image from gallery</Text>
+              <Text style={[globalStyles.Color.white, globalStyles.textCenter]}>Select image from gallery</Text>
             </TouchableOpacity>
 
             <TouchableOpacity style={dashboardStyle.card}
@@ -51,7 +51,7 @@ export default function Scan() {
             >
               <MaterialIcons name="web" style={dashboardStyle.icon} />
               <Text style={dashboardStyle.cardTitle}>Use Image URL</Text>
-              <Text style={[globalStyles.Color.white, globalStyles.center]}>Paste image URL</Text>
+              <Text style={[globalStyles.Color.white, globalStyles.textCenter]}>Paste image URL</Text>
             </TouchableOpacity>
 
           </View>

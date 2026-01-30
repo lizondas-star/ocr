@@ -15,7 +15,11 @@ export const globalStyles = StyleSheet.create({
     padding: 20,
   },
 
-  center: {
+  textCenter: {
     textAlign: "center"
+  },
+
+  itemCenter: {
+    alignItems: "center"
   }
 })
